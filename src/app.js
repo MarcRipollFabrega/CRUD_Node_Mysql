@@ -5,9 +5,13 @@ const path = require('path'); // Requerim path per trobar les rutes
 const morgan = require('morgan'); //Requerim morgan
 const mysql = require('mysql'); // Requerim mysql
 const myConnection = require('express-myconnection'); // Requerim express-myconnection
+const { emitWarning } = require('process');
 
 
 const app = express(); // Iniciem express en la constant app
+
+// Importando rutas
+const customerRoutes = require('./routes/customer'); // Guarda la informació del arxiu customer.js en aquesta variable
 
 // Configurar Express
 app.set('port', process.env.PORT || 3000); // Busca si hay un puerto libre y si no utiliza el 3000
@@ -24,7 +28,13 @@ app.use(myConnection(mysql, {
     database:'crudnodejsmysql'
 }, 'single'));
 
+app.use(express.urlencoded({extended: false}));
 
+// Rutas
+app.use('/', customerRoutes); // Utilitzar les rutes del arxiu customer
+
+// Archivos estaticos
+app.use(express.static(path.join(__dirname,'public' ))); // Para indicar donde esta la carpeta public
 
 // Inicia el servidor
 app.listen(app.get('port'), () => {
