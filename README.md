@@ -21,6 +21,7 @@ https://www.youtube-nocookie.com/embed/VxRXlUrV6y0?playlist=VxRXlUrV6y0&autoplay
 </ul>
 <h2>👤 Autor</h2>
 <p>Marc Ripoll Fàbrega</p>
+www.linkedin.com/in/marcripollfàbrega
 
 <h2>⚖️ Licencia</h2>
 <p>Este proyecto se distribuye bajo la licencia MIT License. Puedes ver los detalles completos en el archivo LICENSE en este repositorio.</p>
